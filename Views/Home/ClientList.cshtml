@@ -1,0 +1,41 @@
+﻿@model List<clientApp.Models.ClientModel>
+
+@{
+    ViewData["Title"] = "Client List";
+}
+
+
+<h2>Client List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Nationality</th>
+            <th>DOB</th>
+            <th>Education</th>
+            <th>Prefered</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var client in Model)
+        {
+            <tr>
+                <td>@client.Name</td>
+                <td>@client.Gender</td>
+                <td>@client.Phone</td>
+                <td>@client.Email</td>
+                <td>@client.Address</td>
+                <td>@client.Nationality</td>
+                <td>@client.DOB</td>
+                <td>@client.Education</td>
+                <td>@client.PreferedContact</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
