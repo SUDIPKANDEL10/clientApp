@@ -5,7 +5,7 @@ Create a New ASP.NET Core MVC Project:
 Open Visual Studio.
 Create a new ASP.NET Core Web Application.
 Select "ASP.NET Core Web App (Model-View-Controller)" template.
-Name your project and click "Create".
+Name of project and click "Create".
 Install Necessary Packages:
 Open Package Manager Console.
 Install packages like CsvHelper if needed.
