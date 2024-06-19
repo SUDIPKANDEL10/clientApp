@@ -1,5 +1,6 @@
 # clientApp
 Building a part of client section of a system
+
 Step 1: Set Up the Project
 Create a New ASP.NET Core MVC Project:
 Open Visual Studio.
