@@ -1,4 +1,4 @@
-﻿@model List<clientApp.Models.ClientModel>
+﻿@model List<clientApp.Models.ClientViewModel>
 
 @{
     ViewData["Title"] = "Client List";
@@ -16,9 +16,9 @@
             <th>Email</th>
             <th>Address</th>
             <th>Nationality</th>
-            <th>DOB</th>
-            <th>Education</th>
-            <th>Prefered</th>
+            <th>DateOfBirth</th>
+            <th>EducationBackground</th>
+            <th>PreferredContact</th>
         </tr>
     </thead>
     <tbody>
@@ -31,9 +31,9 @@
                 <td>@client.Email</td>
                 <td>@client.Address</td>
                 <td>@client.Nationality</td>
-                <td>@client.DOB</td>
-                <td>@client.Education</td>
-                <td>@client.PreferedContact</td>
+                <td>@client.DateOfBirth</td>
+                <td>@client.EducationBackground</td>
+                <td>@client.PreferredContact</td>
             </tr>
         }
     </tbody>

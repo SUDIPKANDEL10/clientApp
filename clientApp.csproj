@@ -5,9 +5,18 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+		 <ItemGroup>
+    <None Include="wwwroot\clients.csv" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="CsvHelper" Version="32.0.3" />
+   <PackageReference Include="System.IO" Version="4.3.0" />
+	 <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.5" />
+	 <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.5" />
   </ItemGroup>
+
+	
+
 
 </Project>

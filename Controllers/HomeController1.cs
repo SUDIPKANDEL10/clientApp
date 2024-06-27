@@ -1,9 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.IO;
 using clientApp.Models;
-using CsvHelper;
 using System.Text;
 
 
@@ -17,8 +13,9 @@ namespace clientApp.Controllers
         {
             return View();
         }
+
         [HttpPost]
-        public IActionResult SubmitForm(ClientModel client)
+        public IActionResult wwwroot(ClientViewModel clients)
         {
             if (ModelState.IsValid)
             {
@@ -40,7 +37,7 @@ namespace clientApp.Controllers
                         csvContent.AppendLine("Name,Gender,Phone,Email,Address,Nationality,DateOfBirth,EducationBackground,PreferredContact");
                     }
 
-                    csvContent.AppendLine($"{client.Name},{client.Gender},{client.Phone},{client.Email},{client.Address},{client.Nationality},{client.DOB},{client.Education},{client.PreferedContact}");
+                    csvContent.AppendLine($"{clients.Name},{clients.Gender},{clients.Phone},{clients.Email},{clients.Address},{clients.Nationality},{clients.DateOfBirth},{clients.EducationBackground},{clients.PreferredContact}");
 
                     System.IO.File.AppendAllText(path, csvContent.ToString());
                     Console.WriteLine("Data written to CSV file successfully.");
@@ -53,7 +50,7 @@ namespace clientApp.Controllers
                 return RedirectToAction("ClientList");
             }
 
-            return View("Index", client);
+            return View("Index", clients);
         }
 
 
@@ -61,7 +58,7 @@ namespace clientApp.Controllers
         public IActionResult ClientList()
         {
             string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "clients.csv");
-            List<ClientModel> clients = new List<ClientModel>();
+            List<ClientViewModel> clients = new List<ClientViewModel>();
 
             if (System.IO.File.Exists(path))
             {
@@ -72,7 +69,7 @@ namespace clientApp.Controllers
 
                     if (values[0] != "Name") // Skip header
                     {
-                        clients.Add(new ClientModel
+                        clients.Add(new ClientViewModel
                         {
                             Name = values[0],
                             Gender = values[1],
@@ -80,9 +77,9 @@ namespace clientApp.Controllers
                             Email = values[3],
                             Address = values[4],
                             Nationality = values[5],
-                            DOB = (values[6]),
-                            Education = values[7],
-                            PreferedContact = values[8]
+                            DateOfBirth = (values[6]),
+                            EducationBackground = values[7],
+                            PreferredContact = values[8]
                         });
                     }
                 }
