@@ -13,7 +13,7 @@ Install packages like CsvHelper if needed.
 
 Step 2: Create Models
 Define Client Model:
-Create a Client.cs file in the Models folder.
+Create a ClientViewModel.cs file in the Models folder.
 Define properties such as Name, Gender, Phone, Email, Address, Nationality, Date of Birth, Education Background, and Preferred Mode of Contact.
 
 Step 3: Create Views
@@ -21,19 +21,18 @@ Create Client Form View:
 Add a new Razor view named Index.cshtml in the Views/Home folder.
 Create a form for user input.
 Create Clients List View:
-Add a new Razor view named List.cshtml in the Views/Home folder.
+Add a new Razor view named ClientList.cshtml in the Views/Home folder.
 Display the list of clients from the CSV file.
-Create Client Detail View:
-Add a new Razor view named Detail.cshtml in the Views/Home folder.
-Display detailed information for a selected client.
+
+
 
 Step 4: Create Controllers
 Create HomeController:
-Add actions for Index, List, and Detail.
+Add actions for Index, List.
 Handle form submission and CSV file operations.
 
 Step 5: Add Client-Side Validation
-Use JavaScript for Validation:
+Use jQuery for Validation:
 Add validation scripts in the Index.cshtml view to validate inputs.
 
 Step 6: Add Server-Side Validation
@@ -46,7 +45,7 @@ Implement methods in HomeController to read from and write to a CSV file.
 
 Step 8: Test and Debug
 Run the Application:
-Test form submissions, client listing, and detail view functionalities.
+Test form submissions, client listing functionalities.
 Debug and fix any issues.
 
 Step 9: Prepare for Deployment
